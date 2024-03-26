@@ -30,8 +30,7 @@
             <button type="submit" class="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Calculate</button>
             <div v-if="totalFees">
               <p class="text-white mt-4">Total fees with Hostello: £{{ totalFees.toFixed(2) }}</p>
-              <p>total fees with eventbrite</p>
-              <p>saving x</p>
+              <p class="text-white">Total Revenue Minus Fees: £{{ totalRevenueMinusFees.toFixed(2) }}</p>
             </div>
           </div>
         </form>
@@ -40,51 +39,45 @@
   </template>
   
   <script>
-  export default {
-    data() {
-      return {
-        ticketQuantity: 0,
-        ticketPrice: 10, // Default ticket price
-        totalFees: 0,
-        eventbriteServiceFeeRange: [2, 5], // Eventbrite service fee range (percentage)
-        eventbriteProcessingFeePercentage: 2.9, // Eventbrite payment processing fee percentage
-        eventbriteProcessingFeeFixed: 0.3 // Eventbrite payment processing fee fixed amount
-      };
-    },
-    methods: {
-      calculateFees() {
-        // Calculate Hostello fees
-        const applicationFeePercentage = 4.1;
-        const applicationFeeFixed = 0.60;
-  
-        const quantity = parseInt(this.ticketQuantity);
-        const price = parseFloat(this.ticketPrice);
-  
-        if (!isNaN(quantity) && !isNaN(price)) {
-          const totalTicketPrice = price + (applicationFeePercentage / 100 * price) + applicationFeeFixed;
-          this.totalFees = totalTicketPrice * quantity;
-  
-          // Calculate Eventbrite fees
-          const eventbriteServiceFee = (this.eventbriteServiceFeeRange[0] + this.eventbriteServiceFeeRange[1]) / 2;
-          const eventbriteProcessingFee = (this.eventbriteProcessingFeePercentage / 100 * price) + this.eventbriteProcessingFeeFixed;
+export default {
+  data() {
+    return {
+      ticketQuantity: 0,
+      ticketPrice: 10, // Default ticket price
+      totalFees: 0,
+      eventbriteServiceFeeRange: [2, 5], // Eventbrite service fee range (percentage)
+      eventbriteProcessingFeePercentage: 2.9, // Eventbrite payment processing fee percentage
+      eventbriteProcessingFeeFixed: 0.3, // Eventbrite payment processing fee fixed amount
+      savings: 0,
+      totalRevenueMinusFees: 0
+    };
+  },
+  methods: {
+    calculateFees() {
+      const applicationFeePercentage = 4.1;
+      const applicationFeeFixed = 0.60;
 
-const eventbriteTotalTicketPrice = price + (eventbriteServiceFee / 100 * price) + eventbriteProcessingFee;
+      const quantity = parseInt(this.ticketQuantity);
+      const price = parseFloat(this.ticketPrice);
 
-// Compare fees
-const hostelloFees = this.totalFees;
-const eventbriteFees = eventbriteTotalTicketPrice * quantity;
+      if (!isNaN(quantity) && !isNaN(price)) {
+        const totalTicketPrice = price * quantity;
+        const hostelloTotalFees = (applicationFeePercentage / 100 * price + applicationFeeFixed) * quantity;
+        this.totalFees = hostelloTotalFees;
+        this.totalRevenueMinusFees = totalTicketPrice - hostelloTotalFees;
 
-if (hostelloFees < eventbriteFees) {
-  console.log("Hostello fees are lower than Eventbrite fees.");
-} else if (hostelloFees > eventbriteFees) {
-  console.log("Hostello fees are higher than Eventbrite fees.");
-} else {
-  console.log("Hostello fees are equal to Eventbrite fees.");
+        // Eventbrite calculations
+        const eventbriteServiceFee = ((this.eventbriteServiceFeeRange[0] + this.eventbriteServiceFeeRange[1]) / 2) / 100 * price;
+        const eventbriteProcessingFee = this.eventbriteProcessingFeePercentage / 100 * price + this.eventbriteProcessingFeeFixed;
+        const eventbriteTotalFees = (eventbriteServiceFee + eventbriteProcessingFee) * quantity;
+
+        // Calculate savings
+        this.savings = eventbriteTotalFees - hostelloTotalFees;
+      }
+    }
+  }
 }
-}
-}
-}
-}
+
 </script>
 
 <style scoped>

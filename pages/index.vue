@@ -11,7 +11,7 @@
             resources to bring your vision to life effortlessly. Say goodbye to the complexities of event planning and
             hello to a smoother, more efficient process with Hostello by your side.</span></p>
       </div>
-      <div class="sm:grid grid-cols-10 sm:gap-10 sm:max-w-7xl mb-20 mx-auto sm:p-10 p-4 sm:rounded-xl shadow-lg bg-opacity-20 sm:bg-opacity-100 sm:bg-gray-900/40 backdrop-blur-lg">
+      <div class="sm:grid grid-cols-10 sm:gap-10 sm:max-w-7xl mb-20 pb-8 mx-auto sm:p-10 p-4 sm:rounded-xl shadow-lg bg-opacity-20 sm:bg-opacity-100 sm:bg-gray-900/40 backdrop-blur-lg">
         <lazy-sections-tabs class="col-span-7 sm:col-span-4"></lazy-sections-tabs>
         <div class="sm:col-span-6">
           <intro class="text-light mt-20 sm:mt-0"></intro>
