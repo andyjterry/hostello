@@ -1,0 +1,47 @@
+// SCSS Variables for Brand Colors (HEX)
+$primary-colour:#37D2F0;
+$secondary-colour: #f05537;
+$dark-colour: #1d1d1d;
+$light-colour: #E5E5E5;
+$red: #d62828ff; 
+
+// Background Colors
+.bg-primary {
+  background-color: $primary-colour;
+}
+
+.bg-secondary {
+  background-color: $secondary-colour;
+}
+
+.bg-dark {
+  background-color: $dark-colour;
+}
+
+.bg-light {
+  background-color: $light-colour;
+}
+.bg-red {
+  background-color: $red;
+}
+.text-red {
+  colour: $red;
+}
+
+// Text Colors
+.text-primary {
+  color: $primary-colour;
+}
+
+.text-secondary {
+  color: $secondary-colour;
+}
+
+.text-dark {
+  color: $dark-colour;
+}
+
+.text-light {
+  color: $light-colour;
+}
+
