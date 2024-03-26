@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-10 bg-dark">
+  <div class="relative z-0 bg-dark">
 
     <div class="z-30 relative">
       <div class="text-light drop-shadow-lg max-w-7xl mx-auto flex flex-col sm:mb-10 space-y-3 p-4">
