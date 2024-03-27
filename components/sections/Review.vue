@@ -14,7 +14,7 @@
                 <use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86" />
               </svg>
               <blockquote class="text-xl font-semibold leading-8  sm:text-2xl sm:leading-9">
-                <p>Hostello has revolutionized the way we manage our hostel operations. The platform's intuitive interface and comprehensive features have significantly streamlined our booking and guest management processes. We've seen a notable increase in bookings since implementing Hostello, thanks to its user-friendly booking system and seamless integration with our website. The mobile app has been particularly useful for managing reservations on the go. Overall, Hostello has exceeded our expectations and has become an indispensable tool for our hostel management.</p>
+                <p>Hostello has transformed our event management processes, providing us with an efficient and user-friendly platform. Its intuitive interface and extensive features have greatly simplified our event booking and attendee management tasks. Since integrating Hostello into our system, we've experienced a significant boost in event bookings, attributable to its seamless booking system and easy integration with our website. The mobile app has been especially handy for managing event reservations remotely. In summary, Hostello has surpassed our expectations and has become an indispensable tool for our event management operations.</p>
               </blockquote>
               <figcaption class="mt-8 text-base">
                 <div class="font-semibold ">Jane Smith</div>
