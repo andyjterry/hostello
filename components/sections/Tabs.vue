@@ -15,7 +15,7 @@
       </div>
     </nav>
 
-    <component class="p-6 text-xs sm:text-lg relative h-full isolate overflow-hidden light rounded-b-lg sm:rounded-lg shadow-lg" :is="selectedComponent"></component>
+    <component class=" sm:p-6 text-xs sm:text-lg relative h-full isolate overflow-hidden light rounded-b-lg sm:rounded-lg shadow-lg" :is="selectedComponent"></component>
   </div>
 </template>
 

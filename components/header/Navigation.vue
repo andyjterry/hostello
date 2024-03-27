@@ -75,7 +75,7 @@
           </div>
           <div class="ml-3">
             <div class="text-base font-medium text-gray-800">Uğur EKEN</div>
-            <div class="text-lg font-semibold text-gray-500">ugur@indigospark.co.uk</div>
+            <div class="text-sm font-semibold text-secondary">ugur@indigospark.co.uk</div>
           </div>
           <button type="button" class="relative ml-auto flex-shrink-0 rounded-full bg-light p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
             <span class="absolute -inset-1.5" />

@@ -192,11 +192,10 @@
       <p v-show="allSectionsComplete" class="text-xs my-3 bg-red-500 text-light p-2 rounded">Please ensure all form fields are completed before submitting the form to start your event's journey and connect with your audience.</p>
 
       <button
-        :disabled="!allSectionsComplete"
-        role="button"
+      :disabled="!allSectionsComplete"
+      role="button"
         type="submit"
-        class="mt-6 px-4 py-2 bg-red-600 text-light rounded-md hover:bg-red-700"
-        :class="{ 'bg-gray-500/50 opacity-50 cursor-not-allowed': !allSectionsComplete }"
+        class="mt-6 px-4 py-2 w-full bg-red-600 text-light rounded-md hover:bg-red-700"
         aria-describedby="createEventButtonDescription"
       >
         Create Event
@@ -249,8 +248,12 @@ watch(ticketsAvailable, () => {
 });
 
 const submitForm = () => {
-  alert("Form submitted. Check the console for data.");
-  console.log(ticketPrice, ticketsAvailable, discountCodes);
+  if (allSectionsComplete.value) {
+    alert("Form submitted. Check the console for data.");
+    console.log(ticketPrice, ticketsAvailable, discountCodes);
+  } else {
+    alert("Please ensure all sections are complete before submitting the form.");
+  }
 };
 
 
@@ -281,9 +284,18 @@ const isSectionComplete = (section) => {
 
 // All sections are complete
 const allSectionsComplete = computed(() => {
-  return event.name !== "" && event.date !== "" && event.location !== "" && event.description !== "" &&
-    ticketPrice.value !== null && ticketsAvailable.value !== null &&
-    discountCodes.value.length > 0 && branding.colors[0] !== "" && branding.colors[1] !== "" && branding.logo !== null;
+  return (
+    event.name !== "" &&
+    event.date !== "" &&
+    event.location !== "" &&
+    event.description !== "" &&
+    ticketPrice.value !== null &&
+    ticketsAvailable.value !== null &&
+    discountCodes.value.length > 0 &&
+    branding.colors[0] !== "" &&
+    branding.colors[1] !== "" &&
+    branding.logo !== null
+  );
 });
 
 // discount code logic
