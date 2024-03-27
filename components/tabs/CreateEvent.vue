@@ -300,8 +300,6 @@ const allSectionsComplete = computed(() => {
 
 // discount code logic
 
-// Define a reactive variable to track discount codes
-
 // Function to add a discount code
 const addDiscountCode = () => {
   if (discountCodes.value.length < 3) {
