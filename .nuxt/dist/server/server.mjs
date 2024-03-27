@@ -1,1 +1,0 @@
-export { default } from "file:///C:/Users/andre/Documents/Brand%20Badger%20Clients/indigosparks/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
