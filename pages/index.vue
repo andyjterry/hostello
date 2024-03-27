@@ -17,6 +17,7 @@
           <intro class="text-light mt-20 sm:mt-0"></intro>
         </div>
       </div>
+      <LazySectionsBusinessShowcase></LazySectionsBusinessShowcase>
       <call-to-action></call-to-action>
       <LazySectionsCalculator></LazySectionsCalculator>
       <review></review>
@@ -38,6 +39,7 @@
 import Intro from "~/components/sections/Intro.vue";
 import Review from "~/components/sections/Review.vue";
 import CallToAction from "~/components/sections/CallToAction.vue";
+import BusinessShowcase from "~/components/sections/BusinessShowcase.vue";
 
 export const pageTitle = "Hostello - Your Hotel Event Booking System";
 export const pageDescription = "Discover seamless hotel event booking with Hostello. Plan and manage your events effortlessly, from conferences to weddings, with our intuitive platform.";
