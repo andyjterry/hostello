@@ -3,9 +3,9 @@
       <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Revolutionize Your Hotel Booking Experience with Hostello</h2>
-            <p class="mt-6 text-xl leading-8 text-gray-600">Discover how Hostello can simplify and enhance your hotel booking process. Our intuitive platform offers seamless reservation management, real-time availability updates, and personalized guest experiences. Say goodbye to booking hassles and hello to Hostello.</p>
-            <p class="mt-6 text-base leading-7 text-gray-600">Join Hostello today and experience the future of hotel management.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Revolutionize Your Event Management with Hostello</h2>
+<p class="mt-6 text-xl leading-8 text-gray-600">Discover how Hostello can simplify and elevate your event management process. Our intuitive platform offers seamless event booking, attendee management, and personalized event experiences. Bid farewell to event planning complexities and welcome Hostello.</p>
+<p class="mt-6 text-base leading-7 text-gray-600">Join Hostello today and embrace the future of event management.</p>
             <div class="mt-10 flex">
               <a href="#" class="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-light shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Sign Up Now <span aria-hidden="true">&rarr;</span></a>
             </div>
