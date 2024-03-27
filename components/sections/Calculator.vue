@@ -3,14 +3,14 @@
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
       <div class="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:col-span-7">
         <h2 class="inline sm:block lg:inline xl:block">Calculate your event fees with Hostello</h2>
-        <div class="mt-8 text-white text-xs leading-5 tracking-wider">
-          <p>When you press calculate:</p>
-          <ul class="list-disc ml-6 mt-2">
+        <div class="mt-8 text-white text-sm leading-5 tracking-wider">
+          <p class="text-Xl">How it works:</p>
+          <ul class="list-disc ml-6 mt-2 text-sm">
             <li>You will pay a competitive event application fee of 4.1% + £0.60 per ticket to Hostello.</li>
             <li>The booker will be charged the adjusted ticket price, which may include fees.</li>
             <li>You will receive the adjusted ticket price minus the application fee per ticket sold.</li>
           </ul>
-          <p class="mt-4">Compare your total fees with other services:</p>
+          <p class="text-Xl mt-4">Compare your total fees with other services:</p>
           <ul class="list-disc ml-6 mt-2">
             <li>Billetto charges a fee of 3.90% + £0.90 per ticket paid by the ticket buyer.</li>
           </ul>
@@ -28,10 +28,13 @@
           </div>
           <button type="submit" class="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Calculate</button>
           <div v-if="totalFees">
-            <p class="text-white mt-4">Total fees with Hostello: £{{ totalFees.toFixed(2) }}</p>
+            <div class="border-l-4 border-orange-600 border-solid pl-4">
+            <p class="text-white">Total fees with Hostello: £{{ totalFees.toFixed(2) }}</p>
             <p class="text-white">Total Revenue Minus Fees: £{{ totalRevenueMinusFees.toFixed(2) }}</p>
-            <p class="text-white">Compare this to other services:</p>
+          </div>
+            <p class="text-white mt-4 text-xs">Compare this to other services:</p>
             <p class="text-white">Billetto Total Revenue Minus Fees: £{{ billettoTotalRevenueMinusFees.toFixed(2) }}</p>
+            <p v-if="billettoTotalRevenueMinusFees.toFixed(2) < totalRevenueMinusFees.toFixed(2)" class="text-white mt-4">Using Hostello would generate you <span class="text-orange-400">£{{ this.savings.toFixed(2) }}</span> more than Biletto</p>
           </div>
         </div>
       </form>
@@ -73,7 +76,7 @@ export default {
         this.billettoTotalRevenueMinusFees = totalTicketPrice - billettoTotalFees;
 
         // Calculate savings
-        this.savings = this.eventbriteTotalRevenueMinusFees - hostelloTotalFees;
+        this.savings = this.totalRevenueMinusFees - this.billettoTotalRevenueMinusFees;
       }
     }
   }
