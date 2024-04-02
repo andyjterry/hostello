@@ -312,10 +312,6 @@ const removeDiscountCode = (index) => {
   discountCodes.value.splice(index, 1);
 };
 
-// Hide the discount code input fields initially
-onMounted(() => {
-  addDiscountCode();
-});
 </script>
 
 <style lang="scss" scoped>
